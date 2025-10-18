@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configure Extension</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+    <div id="dropdown-container">
+        <div class="header">
+            <h3>Configure Extension</h3>
+        </div>
+        
+        <div class="content">
+            <div class="license-section" id="licenseSection">
+                <!-- Collapsed view (shown when license is valid) -->
+                <div id="licenseCollapsed" style="display: none;">
+                    <div class="license-validated">
+                        <span class="checkmark">✓</span> License Validated
+                        <button class="expand-button" onclick="toggleLicenseDetails()">Show Details</button>
+                    </div>
+                </div>
+
+                <!-- Expanded view (shown when entering license or when clicking Show Details) -->
+                <div id="licenseDetails">
+                    <div class="section-title">License Key</div>
+                    <div class="input-group">
+                        <input type="text" id="license-key" placeholder="Enter your license key">
+                        <div id="license-status" class="license-status"></div>
+                        <br></br>
+                        <div class="section-get-key-title">Get your license key from:</div>
+                        <h2>
+                            TAB<span style="font-weight: bold; font-size: 1.4em;">-</span>TOOLS.COM
+                        </h2>
+                          
+                    </div>
+                </div>
+            </div>
+
+            <div id="config-content" style="display: none;">
+                <div class="filter-section">
+                    <div class="section-title">Filter Settings</div>
+                    <div class="filter-headers">
+                        <div class="dropdown-group">
+                            <label>Filter</label>
+                        </div>
+                        <div class="dropdown-group">
+                            <label>Parameter To Update</label>
+                        </div>
+                        <div style="flex: 0 0 36px;"></div>
+                    </div>
+                    <div id="filters-container"></div>
+                    <div class="empty-state" id="empty-state">
+                        <h4>No filters configured</h4>
+                        <p>Add your first filter to get started.</p>
+                    </div>
+                    <button id="add-dropdown">+ Add Filter</button>
+                </div>
+
+                <div class="filter-section">
+                    <div class="section-title">Default Values</div>
+                    <div class="input-group">
+                        <label>All Selected Value</label>
+                        <input type="text" id="all-selected-value" placeholder="Default: .*" value=".*">
+                    </div>
+                    <div class="input-group">
+                        <label>Nothing Selected Value</label>
+                        <input type="text" id="nothing-selected-value" placeholder="Default: ^$" value="^$">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="actions">
+            <button id="save-settings">Save Settings</button>
+        </div>
+    </div>
+
+    <script src="./tableau.extensions.1.latest.min.js"></script>
+    <script src="./config.js"></script>
+</body>
+</html>
